@@ -22,6 +22,7 @@ public class Hooks {
         driver.manage().deleteAllCookies();
     }
 
+    // TODO delete all polls and pages
     @After
     public void embedScreenshot(Scenario scenario) {
         if (scenario.isFailed()) {
