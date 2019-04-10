@@ -1,4 +1,4 @@
 package pages;
 
-public class PollQuestionAndAnswersPage {
+public class PollQuestionAndAnswersPage extends PollPage {
 }
