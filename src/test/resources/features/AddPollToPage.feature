@@ -1,14 +1,21 @@
 Feature: Add Poll to page
 
 Scenario: add poll to a new page
-    Given I am on page
 
-    When  I get the poll code from shortcode field
-    And   I put shortcode in Edit page
+    Given Login as admin
+    When  I am on View all poll page
+    And   I get the poll code from shortcode field
+    And   I put shortcode in New page
     And   I Publish the page
     Then  The Poll is published to page
 
-
+  Scenario: add poll to existing page
+    Given Login as admin
+    When  I am on View all poll page
+    And   I get the poll code from shortcode field
+    And   I put shortcode in Existing page
+    And   I Publish the page
+    Then  The Poll is published to page
 
   Scenario: verify logged users can see the poll
     Given
@@ -32,5 +39,6 @@ Scenario: add poll to a new page
     And  I Publish poll on the page
     And  I navigate to the page where the poll is published
     Then I check that the poll behaves accordingly to the options set
+
 
 

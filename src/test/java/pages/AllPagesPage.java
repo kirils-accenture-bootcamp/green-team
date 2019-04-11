@@ -10,5 +10,11 @@ public class AllPagesPage {
 
     @FindBy(how = How.XPATH, using = "//i[@class='fa fa-code']")
     private List<WebElement> pagesList;
+    @FindBy(how = How.CSS, using = "strong>a")
+    private WebElement existingPage;
 
+
+    public void clickOnExistingPage() {
+        existingPage.click();
+    }
 }
