@@ -2,20 +2,23 @@ Feature: Writing test scenarios for Question and Answers tab
 
   @testAddPoll
   Scenario Outline: making poll with basic settings
-    Given I am on the Wordpress page
-    When I press Add New poll
+
+    Given Web page is opened
+    When I log in as gt
+    And Open All poll page
+    And I press Add New poll
     And Input the <name> of the poll
     And I choose template
+         #moving to right and then back to left template (checking arrows functionality)
     And I move to Questions and Answers tab
-    And Enter <question>
-    And Enter <answerA>
-    And Enter <answerB>
+    And I Enter question <question>
+    And I Enter answerA <answerA>
+    And I Enter answerB <answerB>
     And Add a new answer
-    And Enter <answerC> #should I delete the answer just to check its functionality right now or in later scenario
-    And Press Publish button
+    And I Enter answerC <answerC>
     And Edit access configurations
     And Publish poll
-    And I am redirected to All poll page
+    # redirected to all poll page + wait.until
     And I open the poll I have made
     Then I check saved inputs
 
